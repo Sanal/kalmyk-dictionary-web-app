@@ -23,3 +23,15 @@ npm install
 ```bash
 nvm install
 ```
+
+To start the app on your local machine run:
+
+```bash
+npm run dev
+```
+
+If you need to start the app on a specific port you may pass an argument `-p`, e.g:
+
+```bash
+npm run dev -- -p 8080
+```
