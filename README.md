@@ -17,11 +17,11 @@ The app uses Next.js framework based on React 17.
 Before starting development you need to successfully run following commands:
 
 ```bash
-npm install
+nvm install
 ```
 
 ```bash
-nvm install
+npm install
 ```
 
 To start the app on your local machine run:
