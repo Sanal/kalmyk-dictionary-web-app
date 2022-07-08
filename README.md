@@ -4,6 +4,10 @@
 
 The engine of the app is Node.js LTS Fermium (v14.19.3).
 
+## Package manager
+
+Yarn 1.22.19 (classic).
+
 ## React
 
 The app uses Next.js framework based on React 17.
@@ -21,17 +25,17 @@ nvm install
 ```
 
 ```bash
-npm install
+yarn
 ```
 
 To start the app on your local machine run:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 If you need to start the app on a specific port you may pass an argument `-p`, e.g:
 
 ```bash
-npm run dev -- -p 8080
+yarn dev -- -p 8080
 ```
