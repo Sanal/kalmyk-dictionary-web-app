@@ -2,5 +2,17 @@
   "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
   "globals": {
     "React": "readonly"
+  },
+  "rules": {
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["single", "multiple", "all", "none"],
+        "allowSeparatedGroups": false
+      }
+    ]
   }
 }
