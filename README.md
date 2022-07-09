@@ -42,4 +42,12 @@ yarn dev -- -p 8080
 
 ## Commitlint
 
-Commitlint is checking commit messages for compliance with the rules. You can find them in `commitlint.config.js` file.
+You can find commit message rules in `commitlint.config.js` file.
+
+## Storybook
+
+To browse components library run
+
+```bash
+yarn storybook
+```
