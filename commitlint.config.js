@@ -7,7 +7,8 @@
 // refactor: A code change that neither fixes a bug nor adds a feature
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // test: Adding missing tests or correcting existing tests
-// rules: Adding or updating formatting, linting and other code quality rules
+// rules: Adding or updating formatting, linting or other code quality rules
+// typo: Fixing spelling and semantic errors
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
@@ -46,6 +47,7 @@ module.exports = {
         'security',
         'changeset',
         'rules',
+        'typo',
       ],
     ],
   },
