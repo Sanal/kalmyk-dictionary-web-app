@@ -39,3 +39,7 @@ If you need to start the app on a specific port you may pass an argument `-p`, e
 ```bash
 yarn dev -- -p 8080
 ```
+
+## Commitlint
+
+Commitlint is checking commit messages for compliance with the rules. You can find them in `commitlint.config.js` file.
