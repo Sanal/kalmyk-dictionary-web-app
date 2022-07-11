@@ -5,4 +5,4 @@ export default {
   component: Button,
 };
 
-export const DefaultButton = () => <Button>Кнопка</Button>;
+export const DefaultButton = () => <Button>Текст</Button>;

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: borales/checkout@master
+        uses: actions/checkout@master
         with:
           persist-credentials: false
 
