@@ -3,39 +3,28 @@ on:
   push:
     branches:
       - main
-    paths: ['stories/**']
+    # paths: ['stories/**']
 
 jobs:
-  prepare:
-    name: Prepare
-    runs-on: ubuntu-latest
-    steps:
-      - uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 14.20.0
-  install:
-    name: Install
-    runs-on: ubuntu-latest
-    needs: prepare
-    steps:
-      - uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 14.20.0
-      - run: yarn
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-      - uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 14.20.0
-      - run: yarn build-storybook
   deploy:
-    name: Deploy 🚀
     runs-on: ubuntu-latest
-    needs: build
+    strategy:
+      matrix:
+        node-version: 14.20.0
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Install
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+      # Build
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build-storybook
+      # Deploy
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: storybook
