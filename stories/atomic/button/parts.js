@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
+  align-items: center;
   display: flex;
   gap: 8px;
   padding: 8px 16px;
@@ -19,5 +20,10 @@ export const StyledButton = styled.button`
 
   &:active {
     background-color: #003eb6;
+  }
+
+  & svg {
+    fill: currentColor;
+    stroke: currentColor;
   }
 `;
