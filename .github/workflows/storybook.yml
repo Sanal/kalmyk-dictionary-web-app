@@ -14,20 +14,21 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setting up Node.js version
+      - name: Install
         uses: actions/setup-node@v3
         with:
           node-version: 14.20.0
-
-      - name: Install
         uses: CultureHQ/actions-yarn@master
         with:
           args: install
 
       - name: Build
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.20.0
         uses: CultureHQ/actions-yarn@master
         with:
-          args: deploy-storybook
+          args: build-storybook
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
