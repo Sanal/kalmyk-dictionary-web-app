@@ -1,4 +1,4 @@
-name: Build and Deploy Storybook
+name: Deploy Storybook
 on:
   push:
     branches:
@@ -6,21 +6,33 @@ on:
     paths: ['stories/**']
 
 jobs:
-  build-and-deploy:
+  prepare:
+    name: Prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: DerYeger/yarn-setup-action@master
         with:
           node-version: 14.20.0
-      - uses: CultureHQ/actions-yarn@master
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
         with:
-          args: install
-      - uses: CultureHQ/actions-yarn@master
+          node-version: 14.20.0
+      - run: yarn
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
         with:
-          args: build-storybook
-
-      - name: Deploy 🚀
+          node-version: 14.20.0
+      - run: yarn build-storybook
+  deploy:
+    name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: storybook
