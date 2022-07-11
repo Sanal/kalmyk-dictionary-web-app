@@ -51,3 +51,5 @@ To browse components library run
 ```bash
 yarn storybook
 ```
+
+Deployed library can be accessed by this [URL](https://sanal.github.io/kalmyk-dictionary-web-app).
