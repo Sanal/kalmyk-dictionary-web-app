@@ -9,24 +9,14 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
-        with:
-          persist-credentials: false
-
-      - name: Install
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 14.20.0
-        uses: CultureHQ/actions-yarn@master
+      - uses: CultureHQ/actions-yarn@master
         with:
           args: install
-
-      - name: Build
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.20.0
-        uses: CultureHQ/actions-yarn@master
+      - uses: CultureHQ/actions-yarn@master
         with:
           args: build-storybook
 
