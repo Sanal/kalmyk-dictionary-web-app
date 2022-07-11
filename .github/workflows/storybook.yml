@@ -14,8 +14,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setting Node.js version
-        uses: dcodeIO/setup-node-nvm@master
+      - name: Setting up Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.20.0
 
       - name: Install
         uses: CultureHQ/actions-yarn@master

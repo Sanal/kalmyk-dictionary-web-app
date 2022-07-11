@@ -2,7 +2,7 @@
 
 ## Node.js
 
-The engine of the app is Node.js LTS Fermium (v14.x.x).
+The engine of the app is Node.js v14.20.0.
 
 ## Package manager
 
