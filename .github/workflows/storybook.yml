@@ -16,14 +16,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      # Install
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: DerYeger/yarn-setup-action@master
         with:
-          cmd: install
-      # Build
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: build-storybook
+          node-version: ${{ matrix.node-version }}
+      # Build and Deploy
+      - run: yarn
+      - run: yarn build-storybook
       # Deploy
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
